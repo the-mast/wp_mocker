@@ -292,4 +292,9 @@ class test_test_helper extends TestCase {
         $this->assertEquals("hello", __("hello"));
         $this->assertTrue(expect("__")->to_have_been_called()->to_be_truthy() );
     }
+
+    function test_ShouldReturnInputAndRegisterACallTo_admin_url() {
+        $this->assertEquals("hello", admin_url("hello"));
+        $this->assertTrue(expect("admin_url")->to_have_been_called()->to_be_truthy() );
+    }
 }

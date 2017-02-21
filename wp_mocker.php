@@ -18,6 +18,7 @@ $plugin_basename;
     $wp_function_calls["wp_enqueue_script"] = array();
     $wp_function_calls["add_options_page"] = array();
     $wp_function_calls["__"] = array();
+    $wp_function_calls["admin_url"] = array();
 
     $plugin_options = array();
 
@@ -158,6 +159,11 @@ $plugin_basename;
 
     function __($input) {
         add_call_to_register_function("__", array($input) );
+        return $input;
+    }
+
+    function admin_url($input) {
+        add_call_to_register_function("admin_url", array($input) );
         return $input;
     }
 
