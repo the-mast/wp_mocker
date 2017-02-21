@@ -17,6 +17,7 @@ $plugin_basename;
     $wp_function_calls["wp_enqueue_style"] = array();
     $wp_function_calls["wp_enqueue_script"] = array();
     $wp_function_calls["add_options_page"] = array();
+    $wp_function_calls["__"] = array();
 
     $plugin_options = array();
 
@@ -153,6 +154,11 @@ $plugin_basename;
         include_once $filename;
         if (! function_exists($function_name) )
             throw new inaccessible_callback_exception("can't find function " . $function_name . " in file " . $filename);
+    }
+
+    function __($input) {
+        add_call_to_register_function("__", array($input) );
+        return $input;
     }
 
     function add_action() {

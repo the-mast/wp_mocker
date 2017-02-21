@@ -287,4 +287,9 @@ class test_test_helper extends TestCase {
         add_options_page("junk", "junk", "1.0.0", "all", array(new dummy_class(), "dummy_action") );
         $this->assertTrue(expect("add_options_page")->to_have_been_called()->to_be_truthy() );
     }
+
+    function test_ShouldReturnInputAndRegisterAsACall() {
+        $this->assertEquals("hello", __("hello"));
+        $this->assertTrue(expect("__")->to_have_been_called()->to_be_truthy() );
+    }
 }
