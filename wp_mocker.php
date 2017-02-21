@@ -157,9 +157,9 @@ $plugin_basename;
             throw new inaccessible_callback_exception("can't find function " . $function_name . " in file " . $filename);
     }
 
-    function __($input) {
-        add_call_to_register_function("__", array($input) );
-        return $input;
+    function __($arg1, $arg2) {
+        add_call_to_register_function("__", array($arg1, $arg2) );
+        return $arg1 . $arg2;
     }
 
     function admin_url($input) {

@@ -289,7 +289,7 @@ class test_test_helper extends TestCase {
     }
 
     function test_ShouldReturnInputAndRegisterAsACall() {
-        $this->assertEquals("hello", __("hello"));
+        $this->assertEquals("helloworld", __("hello", "world"));
         $this->assertTrue(expect("__")->to_have_been_called()->to_be_truthy() );
     }
 
