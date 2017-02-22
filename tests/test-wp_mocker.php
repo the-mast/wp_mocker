@@ -307,4 +307,14 @@ class test_test_helper extends TestCase {
         $this->assertEquals("test", esc_html("test"));
         $this->assertTrue(expect("esc_html")->to_have_been_called_with("test")->to_be_truthy() );
     }
+
+    function test_do_settings_sectionShouldBeCalled() {
+        do_settings_section("abc");
+        $this->assertTrue(expect("do_settings_section")->to_have_been_called_with("abc")->to_be_truthy() );
+    }
+
+    function test_settings_fieldsectionShouldBeCalled() {
+        settings_field("abc");
+        $this->assertTrue(expect("settings_field")->to_have_been_called_with("abc")->to_be_truthy() );
+    }
 }

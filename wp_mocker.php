@@ -21,6 +21,8 @@ $plugin_basename;
     $wp_function_calls["admin_url"] = array();
     $wp_function_calls["esc_html"] = array();
     $wp_function_calls["get_admin_page_title"] = array();
+    $wp_function_calls["settings_field"] = array();
+    $wp_function_calls["do_settings_section"] = array();
 
     $plugin_options = array();
 
@@ -218,5 +220,13 @@ $plugin_basename;
     function esc_html($input) {
         add_call_to_register_function("esc_html", array($input) );
         return $input;
+    }
+
+    function settings_field() {
+        add_call_to_register_function("settings_field", func_get_args() );
+    }
+
+    function do_settings_section() {
+        add_call_to_register_function("do_settings_section", func_get_args() );
     }
 ?>
