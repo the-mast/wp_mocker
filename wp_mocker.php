@@ -26,6 +26,7 @@ $plugin_basename;
     $wp_function_calls["checked"] = array();
     $wp_function_calls["esc_attr_e"] = array();
     $wp_function_calls["submit_button"] = array();
+    $wp_function_calls["load_plugin_textdomain"] = array();
 
     $plugin_options = array();
 
@@ -250,4 +251,7 @@ $plugin_basename;
     function submit_button() {
         add_call_to_register_function("submit_button", func_get_args() );
     }
-?>
+
+    function load_plugin_textdomain() {
+        add_call_to_register_function("load_plugin_textdomain", func_get_args() );
+    }

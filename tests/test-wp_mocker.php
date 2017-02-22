@@ -332,4 +332,9 @@ class test_test_helper extends TestCase {
         submit_button("abc");
         $this->assertTrue(expect("submit_button")->to_have_been_called_with("abc")->to_be_truthy() );
     }
+
+    function test_ShouldRegister_load_plugin_textdomain() {
+        load_plugin_textdomain("abc");
+        $this->assertTrue(expect("load_plugin_textdomain")->to_have_been_called_with("abc")->to_be_truthy() );
+    }
 }
