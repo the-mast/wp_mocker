@@ -19,6 +19,8 @@ $plugin_basename;
     $wp_function_calls["add_options_page"] = array();
     $wp_function_calls["__"] = array();
     $wp_function_calls["admin_url"] = array();
+    $wp_function_calls["esc_html"] = array();
+    $wp_function_calls["get_admin_page"] = array();
 
     $plugin_options = array();
 
@@ -206,5 +208,15 @@ $plugin_basename;
         $args = func_get_args();
         method_callback_is_accessible($args[4][0], $args[4][1]);
         add_call_to_register_function("add_options_page", $args );
+    }
+
+    function get_admin_page() {
+        add_call_to_register_function("get_admin_page", func_get_args() );
+        return "";
+    }
+
+    function esc_html($input) {
+        add_call_to_register_function("esc_html", array($input) );
+        return $input;
     }
 ?>
