@@ -22,7 +22,7 @@ $plugin_basename;
     $wp_function_calls["esc_html"] = array();
     $wp_function_calls["get_admin_page_title"] = array();
     $wp_function_calls["settings_fields"] = array();
-    $wp_function_calls["do_settings_section"] = array();
+    $wp_function_calls["do_settings_sections"] = array();
 
     $plugin_options = array();
 
@@ -226,7 +226,7 @@ $plugin_basename;
         add_call_to_register_function("settings_fields", func_get_args() );
     }
 
-    function do_settings_section() {
-        add_call_to_register_function("do_settings_section", func_get_args() );
+    function do_settings_sections() {
+        add_call_to_register_function("do_settings_sections", func_get_args() );
     }
 ?>

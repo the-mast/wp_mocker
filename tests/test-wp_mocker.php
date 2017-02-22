@@ -308,9 +308,9 @@ class test_test_helper extends TestCase {
         $this->assertTrue(expect("esc_html")->to_have_been_called_with("test")->to_be_truthy() );
     }
 
-    function test_do_settings_sectionShouldBeCalled() {
-        do_settings_section("abc");
-        $this->assertTrue(expect("do_settings_section")->to_have_been_called_with("abc")->to_be_truthy() );
+    function test_do_settings_sectionsShouldBeCalled() {
+        do_settings_sections("abc");
+        $this->assertTrue(expect("do_settings_sections")->to_have_been_called_with("abc")->to_be_truthy() );
     }
 
     function test_settings_fieldssectionShouldBeCalled() {
