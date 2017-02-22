@@ -24,6 +24,7 @@ $plugin_basename;
     $wp_function_calls["settings_fields"] = array();
     $wp_function_calls["do_settings_sections"] = array();
     $wp_function_calls["checked"] = array();
+    $wp_function_calls["esc_attr_e"] = array();
 
     $plugin_options = array();
 
@@ -233,5 +234,10 @@ $plugin_basename;
 
     function checked() {
         add_call_to_register_function("checked", func_get_args() );
+    }
+
+    function esc_attr_e() {
+        add_call_to_register_function("esc_attr_e", func_get_args() );
+        return func_get_args()[0];
     }
 ?>

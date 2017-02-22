@@ -322,4 +322,9 @@ class test_test_helper extends TestCase {
         checked("abc");
         $this->assertTrue(expect("checked")->to_have_been_called_with("abc")->to_be_truthy() );
     }
+
+    function test_esc_attr_eShouldReturnTheInputAndRegisterTheCall() {
+        $this->assertEquals("abc", esc_attr_e("abc") );
+        $this->assertTrue(expect("esc_attr_e")->to_have_been_called_with("abc")->to_be_truthy() );
+    }
 }
