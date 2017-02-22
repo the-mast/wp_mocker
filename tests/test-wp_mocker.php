@@ -327,4 +327,9 @@ class test_test_helper extends TestCase {
         $this->assertEquals("abc", esc_attr_e("abc") );
         $this->assertTrue(expect("esc_attr_e")->to_have_been_called_with("abc")->to_be_truthy() );
     }
+
+    function test_ShouldRegisterSubmitButton() {
+        submit_button("abc");
+        $this->assertTrue(expect("submit_button")->to_have_been_called_with("abc")->to_be_truthy() );
+    }
 }

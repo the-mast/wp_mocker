@@ -25,6 +25,7 @@ $plugin_basename;
     $wp_function_calls["do_settings_sections"] = array();
     $wp_function_calls["checked"] = array();
     $wp_function_calls["esc_attr_e"] = array();
+    $wp_function_calls["submit_button"] = array();
 
     $plugin_options = array();
 
@@ -239,5 +240,9 @@ $plugin_basename;
     function esc_attr_e() {
         add_call_to_register_function("esc_attr_e", func_get_args() );
         return func_get_args()[0];
+    }
+
+    function submit_button() {
+        add_call_to_register_function("submit_button", func_get_args() );
     }
 ?>
