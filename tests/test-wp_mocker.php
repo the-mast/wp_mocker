@@ -317,4 +317,9 @@ class test_test_helper extends TestCase {
         settings_fields("abc");
         $this->assertTrue(expect("settings_fields")->to_have_been_called_with("abc")->to_be_truthy() );
     }
+
+    function test_checkedShouldRegiserTheCall() {
+        checked("abc");
+        $this->assertTrue(expect("checked")->to_have_been_called_with("abc")->to_be_truthy() );
+    }
 }
