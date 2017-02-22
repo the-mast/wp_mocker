@@ -298,9 +298,9 @@ class test_test_helper extends TestCase {
         $this->assertTrue(expect("admin_url")->to_have_been_called()->to_be_truthy() );
     }
 
-    function test_get_admin_pageShouldReturnAnEmptyPageAndRegisterTheCall() {
-        $this->assertEquals("", get_admin_page());
-        $this->assertTrue(expect("get_admin_page")->to_have_been_called()->to_be_truthy() );
+    function test_get_admin_page_titleShouldReturnAnEmptyPageAndRegisterTheCall() {
+        $this->assertEquals("", get_admin_page_title());
+        $this->assertTrue(expect("get_admin_page_title")->to_have_been_called()->to_be_truthy() );
     }
 
     function test_esc_htmlShouldReturnTheInputAndRegisterCall() {
