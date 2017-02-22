@@ -164,9 +164,14 @@ $plugin_basename;
             throw new inaccessible_callback_exception("can't find function " . $function_name . " in file " . $filename);
     }
 
-    function __($arg1, $arg2) {
-        add_call_to_register_function("__", array($arg1, $arg2) );
-        return $arg1 . $arg2;
+    function __() {
+        $args=func_get_args();
+        add_call_to_register_function("__", $args );
+        $concat_string="";
+        foreach ($args as $arg) {
+            $concat_string=$concat_string . $arg;
+        }
+        return $concat_string;
     }
 
     function admin_url($input) {
